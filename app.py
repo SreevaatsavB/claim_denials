@@ -118,7 +118,7 @@
 
 import streamlit as st
 
-st.markdown("# Claim denails ")
+st.markdown("# Claim denials ")
 # First dropdown for CO16 and CO45
 option = st.selectbox('Select an option', ['CO16', 'CO45'])
 
