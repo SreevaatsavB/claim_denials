@@ -22,449 +22,459 @@ if option == 'CO16':
     mappings = {
         "" : "",
         'UPN': """
-        
-        ### Decision Tree for Claim Denials
+### Decision Tree for Addressing Claim Denials Due to UPN Issues
 
-        1. **Claim Denial Reason**
-        - Is the claim denied due to **Authorization Issues**?
-            - **Yes**: 
-            - Check if there’s a valid authorization.
-                - If **valid authorization exists**: Raise an appeal with the authorization and denied EOB.
-                - If **no valid authorization**: Verify if the claim was submitted correctly and gather needed documentation before resubmission.
-            - **No**:
-            - Proceed to the next reason.
+1. **Claim Denial Reason: UPN Related**
+   - Go to step 2.
 
-        2. **Claim Denial Reason - Missing/incomplete/invalid UPN/Serial Number**
-        - Check if the correct UPN was submitted.
-            - If **UPN is missing**: 
-            - Review billing history for prior claims made with the same code to confirm payment precedent. 
-            - Amend UPN according to submission standards and resubmit the corrected claim.
-            - If **incorrect UPN**: Send corrected claim with the correct format and required documentation.
-            
-        3. **Claim Denial Reason - Claim/service lacks information (Denial Code 16)**
-        - Review the submission for errors or missing details.
-            - If information is found to be **missing**: Gather the necessary documentation and resubmit the claim.
-            - If **authorization is valid**: Prepare an appeal along with the documentation explaining the oversight.
-        
-        4. **Claim Denial Reason - Paid but exceeds Allowed Amount**
-        - Verify the allowed payment limits.
-            - If **exceeds allowed amount**: Calculate the overage and adjust the claim balance.
-            - If under the allowed amount, no further action is required.
+2. **Is UPN Missing?**
+   - **Yes:**
+     - Action: Review denial details and check for UPN in medical portals.
+     - Action: Verify patient eligibility for the date of service.
+     - If UPN can be located:
+       - Action: Submit a corrected claim with the found UPN.
+       - Action: Raise appeal if necessary, sending all required documentation (invoice, denied EOB).
 
-        5. **Claim Denial Reason - Incorrect UPN**
-        - Review the denial details.
-            - Check if it was billed in the correct box.
-            - If yes: Resend a corrected claim with proper UPN and fee schedule to support.
-            - If no: Properly format the UPN and resubmit the claim according to guidelines.
+     - If UPN cannot be located:
+       - Action: Call the health provider for clarification.
+       - Action: Raise appeal stating that the code does not require a UPN based on the provider’s information.
 
-        6. **Claim Denial Reason - Missing Authorization or Invalid Treatment Code**
-        - Confirm current status of the authorization.
-            - If valid authorization is in place: Prepare appeal with supporting documents (EOB, AUTH Sheet).
-            - If missing: Verify need for a prior auth and follow procedures to obtain it.
+   - **No:**
+     - Go to step 3.
 
-        7. **Claim Denial Reason - Timely Filing Issues**
-        - Determine if it’s within the filing deadline.
-            - If within the timeframe: Gather evidence and prepare an appeal.
-            - If **beyond timeframe**: Evaluate if exceptional circumstances exist to warrant reconsideration.
+3. **Is UPN Invalid or Incorrect?**
+   - **Yes:**
+     - Action: Review claim details and check if the submitted UPN was correct.
+     - Action: Refer to the appropriate Fee Schedule to identify the correct UPN.
+     - If correct UPN identified:
+       - Action: Prepare and submit a corrected claim with the valid UPN.
+       - Action: Ensure all details on the claim are accurate to avoid future denials.
 
-        8. **Claim Denial Reason - CO-16 - Submission Errors**
-        - Identify exact submission errors.
-            - If found: Correct details in the claim and resubmit.
-            - If no errors are present: Review the case for previous payments to support an appeal.
+     - If correct UPN not identified:
+       - Action: Call the payer for UPN requirements and details.
+       - Action: Forward to a senior for further assistance if clarification is not obtained.
 
-        9. **Monitoring and Follow-up**
-        - After submitting appeals or resubmissions:
-            - **Set reminders** to follow up on the status of appeals after designated periods (30/60/90 days).
-            - Ensure team members are updated on changes to claim status to enhance communication and strategy.
+   - **No:**
+     - Go to step 4.
 
-        ### Notes for New Agents
-        - Review prior claims for patterns in denials.
-        - Utilize team members’ expertise when facing unfamiliar denials.
-        - Document all actions taken for future reference.
-        - Stay organized and proactive in managing claims to avoid backlogs.
+4. **UPN Submission Format Issues:**
+   - Action: Review how the UPN was submitted (check box#).
+   - If submission was incorrect:
+     - Action: Correct the submission error and resubmit the claim.
+     - Action: Raise appeal if prior correction attempts have been made with no resolution.
+
+5. **If Denial Reason Is Due to Missing Documentation:**
+   - Action: Check if all required documents (invoices, EOBs) are included.
+   - If documents are missing:
+     - Action: Gather and submit all necessary documentation.
+     - Action: Raise an appeal if initial claim denial was due to lack of documentation.
+     
+6. **For Claims That Have Already Been Resubmitted:**
+   - Check follow-up on the status of the claim:
+   - If the claim was denied again:
+     - Action: Gather all error details and documentation.
+     - Action: Raise an appeal with a focus on addressing the reasons for the latest denial.
+
+7. **Consult with Team Leads or Supervisors:**
+   - For complex denials or unresolved issues:
+   - Action: Seek guidance from experienced colleagues or supervisors.
+
+**End of Decision Tree**
+
+### Note:
+Always ensure to keep a well-documented record of each step taken, and communicate clearly with both payers and internal team members to facilitate smooth claims resolution processes.
+
         """,
 
 
-        'Claim lacks information': """
-            ### Decision Tree for Addressing Claim Denials
+        "Incorrect Modifier" : """
 
-            1. **Claim Status Inquiry**
-            - **Action**: Review claim status in the appropriate system (Payspan, caretend, etc.)
-            - **Outcome**: Identify denial reason.
+### Claim Denial Decision Tree
 
-            2. **Denial Reason: Missing Authorization or No Auth (AUT) Obtained**
-            - **Sub-check**: Verify if authorization was submitted for the date of service.
-                - **Yes**: 
-                - Action: Verify validity of authorization in the system.
-                - Outcome: If valid, prepare and submit appeal with authorization documentation and denied EOB.
-                - **No**:
-                - Action: Obtain necessary authorization and submit claim if applicable.
+1. **Initial Claim Check**
+   - Has the claim been denied?
+     - Yes: Proceed to the next step.
+     - No: No action needed.
 
-            3. **Denial Reason: Claim/Service Lacks Information (16)**
-            - **Sub-check**: Review documentation for any missing components.
-                - **Missing Treatment Authorization Code**:
-                - Action: Check authorization details and prepare appeal with valid documents.
-                - **Incorrect or Incomplete Billing**:
-                - Action: Review submission details and correct errors. Resubmit the claim with necessary information.
+2. **Identify Denial Reason**
+   - Is the denial reason related to modifiers (e.g., "Incorrect Modifier," "Missing Modifier")?
+     - Yes: Proceed to the next step.
+     - No: Follow standard procedures for other denial reasons.
 
-            4. **Denial Reason: Paid but Exceeds Allowed Amount**
-            - **Action**: Calculate allowed amount from pricing structure.
-            - **Sub-outcome**: Adjust balance based on your findings.
-                - **Action**: Post payment or adjust balance as necessary.
+3. **Review Claim Details**
+   - Check the following:
+     - **Payment Status**: Is the payment marked as received or not?
+       - Not Received: Investigate further in claim management system (e.g., CareTend).
+       - Received: Note discrepancies for reporting.
 
-            5. **Denial Reason: Incorrect UPN (Universal Product Number)**
-            - **Action**: Review designated section of the claim for UPN.
-            - **Sub-check**: Verify format and correctness.
-                - **Correct Format**:
-                - Action: Ensure correct billing box number and conditions are followed, then resubmit.
-                - **Incorrect Format**:
-                - Action: Correct UPN and resubmit with updated information.
+4. **Verify Submission Frequency**
+   - Is this claim a duplicate submission?
+     - Yes: Verify the original claim and check for correct modifiers attached. If found, take necessary corrective actions to avoid resubmission errors in future.
+     - No: Proceed to the next step.
 
-            6. **Denial Reason: Prior Authorization Expired**
-            - **Action**: Verify if the authorization was valid for the date of service.
-            - **Outcome**: If valid, prepare appeal documenting the valid authorization.
-            - **No Valid Authorization**: 
-                - Action: Forward claim to the necessary team for closure.
+5. **Gather Submission Information**
+   - Check submitted claim portal (e.g., Payspan, Zermied):
+     - **Modifiers Submitted**: Are the correct modifiers (e.g., LT, RT, NU) used per client guidelines?
+       - No: Proceed to the correction steps.
+       - Yes: Investigate client updates or further details and prepare for resubmission.
 
-            7. **Claim Denial due to Timely Filing Expiration**
-            - **Action**: Check the timely filing limits.
-            - **Outcome**: If outside the limit, forward claim to the client for closure.
-            - **Within Limits**:
-                - Action: Gather documentation, and if possible, appeal for reconsideration based on valid reasons.
+6. **Identify the Correct Modifiers Required**
+   - Refer to the latest client requirements for the procedure code:
+     - Are there updated modifier requirements?
+       - Yes: Prepare the corrected claims using the required modifiers.
+       - No: If original submission guidelines were correct, prepare a follow-up or inquiry to the payer.
 
-            8. **Finalizing Actions**
-            - Ensure that all appeals, corrections, and resubmissions include detailed documentation and are sent to the correct address or portal as required.
-            - Maintain follow-up procedures to verify the receipt and progress of appeals or corrections.
-            - Document all findings, actions taken, and correspondence for future reference.
+7. **Correct and Resubmit Claim**
+   - Update the claim with the correct modifier:
+     - Submit the corrected electronic claim.
+     - Note original claims and resubmission codes for records.
+     - Confirm through the claim portal that the resubmission is successfully processed.
 
-            ### Key Points for New Agents:
-            - Always verify the claim details before taking any action.
-            - Maintain clear documentation of the steps taken and ensure that appeals are sent within the required timeframes.
-            - Familiarize yourself with the billing codes and authorization processes specific to your claims.
-            - If in doubt, consult with more experienced team members for guidance.
-                    
-        """,
+8. **Document Actions Taken**
+   - Document all actions and findings in the claim notes including:
+     - Dates of actions, invoice numbers, DOS, and specific actions taken (e.g., review, submit).
+   - Review your documentation before finalizing and closing the claim.
 
+9. **Follow-up**
+   - Follow-up with payer as necessary if the resubmitted claim is denied again.
+   - Use the information gathered to improve future submissions.
 
-        "Authorization" : """
-        
-        ### Decision Tree for Handling Claim Denials in AR Team:
+### Conclusion
+This decision tree provides a straightforward guide to help new agents efficiently handle and navigate claim denials related to incorrect or missing modifiers. Adhering to these steps will help ensure clarity and thoroughness in resolving denials.""", 
 
-        #### 1. **Identify the Denial Reason**
-        - **Authorization Issues**
-            - **No Authorization Obtained**
-            - Check in the system for valid authorization.
-                - If valid authorization exists for the date of service:
-                - **Action**: Raise appeal with the authorization proof.
-                - If no valid authorization:
-                - **Action**: Notify the provider or adjust the claim.
-                
-            - **Pre-Authorization Absent**
-            - Check if pre-authorization was obtained.
-                - If obtained but not recognized:
-                - **Action**: Verify authorization status in the system and raise an appeal with proof.
-                - If not obtained:
-                - **Action**: Notify the provider to obtain authorization for future claims.
+"Claim lacks information" : """
 
-            - **Authorization Does Not Cover DOS**
-            - Verify coverage period for authorization.
-                - If the authorization is valid but denied for the wrong DOS:
-                - **Action**: Raise an appeal including valid authorization documentation.
-                - If the authorization period has expired:
-                - **Action**: Notify the provider to obtain a new authorization.
+### Decision Tree for Claim Denials: "Claim/Service Lacks Information"
 
-        - **Insufficient Information**
-            - **Claim/Service Lacks Information**
-            - Review submitted documentation.
-                - If relevant information can be located:
-                - **Action**: Submit corrected claim or appeal including necessary details.
-                - If information is missing:
-                - **Action**: Collect required documents and submit an appeal.
-                
-            - **Missing UPN**
-            - Check if the Universal Product Number (UPN) was required.
-                - If UPN was not required for the specific service:
-                - **Action**: Raise appeal clarifying the requirement.
-                - If UPN is necessary and is absent:
-                - **Action**: Request the correct UPN from the provider.
-            
-        - **Payment Issues**
-            - **Claim Paid More than Allowed Amount**
-            - Review payment details.
-                - If payment exceeds limits, proceed with:
-                - **Action**: Adjust balance in the system.
-                - If payment is within limits but ticketed as excessive:
-                - **Action**: Investigate and appeal if necessary.
-                
-            - **Primary EOB Required**
-            - Verify if the primary insurance has been billed appropriately.
-                - If no primary claim has been made:
-                - **Action**: Submit primary claim and follow up for resolution.
-                - If primary EOB is available:
-                - **Action**: Send primary EOB as part of the appeal.
-            
-        #### 2. **Submission of Appeal**
-        - **Prepare Documentation**
-            - Collect denial EOB, authorization sheets, and any other required documents.
-            - Complete necessary forms with accurate claim details.
-            
-        - **Determine Appeal Address**
-            - Confirm the mailing address:
-            - **Example**: "PO BOX 811610 LOS ANGELES, CA 90081"
-            - Ensure to include a note regarding the appeal time limits.
+1. **Claim Review**
+   - **Action:** Review the claim denial reason.
+     - If "Claim/service lacks information" is noted:
+       - Proceed to check the **specific information lacking**.
+       - Look for related denial codes (e.g., M62 - Missing/incomplete/invalid treatment authorization code).
 
-        #### 3. **Follow-Up**
-        - Mark the claim for follow-up.
-        - Set reminders to check the status after the expected processing period.
-        - Document all communications and actions in the system for future reference.
+2. **Check Authorization Status**
+   - **Action:** Verify if there is a valid authorization for the date of service (DOS).
+     - If valid authorization exists:
+       - **Prepare an appeal** with the authorization document and EOB.
+       - Submit the appeal to the designated address.
+     - If no valid authorization:
+       - Proceed to review claim submission details.
 
-        ### 4. **Escalation**
-        - If the claim denial is not resolved after two follow-ups:
-            - **Action**: Escalate the situation to a supervisor for further assistance.""",
+3. **Review Claim Submission**
+   - **Action:** Check the details of the claim submission.
+     - Analyze if there are missing/incomplete elements (e.g., treatment authorization code, UPN, etc.):
+       - If the missing element exists:
+         - **Action:** Identify what was missing (e.g., Universal Product Number, treatment authorization code).
+         - Check if it can be obtained through client communication or internal resources.
+       - If there’s a submission error:
+         - **Action:** Correct the error (e.g., update UPN) and **resubmit the claim**.
 
+4. **Contact Related Parties for Missing Information**
+   - **Action:** Reach out to relevant parties (e.g., medical group, IPA).
+     - If you can obtain the missing information/code:
+       - **Prepare and submit appeal.**
+     - If the information cannot be acquired:
+       - Assess if the claim can be adjusted based on the available information.
 
-    
-    "Past timely filing limit" : """
-    ### Claim Denial Decision Tree
+5. **Evaluate Appeal Submission**
+   - **Action:** Ensure all relevant documents are attached to the appeal (EOB, any supporting documentation).
+     - Confirm the appeal address and submit the appeal.
+     - Note the Time Frame for Appeal (TFL) based on the type of denial (typically 365 days from the denial date).
 
-    1. **Identify the Denial Reason**
-    - **Is the claim denied for timely filing limits?**
-        - If **Yes**, proceed to verify eligibility and necessary documentation.
-        - If **No**, continue to the next step.
+6. **Documentation for Future Reference**
+   - **Action:** Maintain records of actions taken, correspondence, and any additional paperwork related to the claim.
+     - Ensure to log the claim number and any associated call references or unique identifiers.
 
-    2. **Check Payment Status**
-    - **Was the claim paid?**
-        - If **Yes**:
-        - **Was the paid amount within the allowed limit?**
-            - If **Yes**, review payment details and adjust the balance appropriately.
-            - If **No**, adjust the balance as it was paid more than allowed.
-        - If **No**, proceed to the next step.
+7. **Follow Up on Appeals**
+   - **Action:** Check the status of the submitted appeal within a specified time frame.
+     - If resolved, update relevant parties.
+     - If not resolved and another denial occurs, revisit steps 1-6 as necessary or escalate if not addressed.
 
-    3. **Identify Documentation Issues**
-    - **Does the claim lack information?**
-        - If **Yes**:
-        - **Is there a valid treatment authorization code?**
-            - If **Yes**, prepare an appeal with necessary documentation (EOB and AUTH sheet).
-            - If **No**, check and gather required information before appealing.
-        - If **No**, continue to the next step.
+### Conclusion
+If at any point a new agent feels uncertain, they should consult with a senior agent or supervisor for additional guidance. Always adhere to company policy and procedures for claim submissions and appeals.""",
 
-    4. **Review for Additional Issues**
-    - **Is there a billing error or missing information in submission?**
-        - If **Yes**, review the claim submission for any errors and prepare to correct them.
-        - If **No**, proceed to the resolution or appeal process.
+"Past timely filing limit" : """
 
-    5. **Next Steps for Appeal**
-    - **Prepare appeal documentation**:
-        - Include all relevant information (EOBs, authorizations, corrected claims).
-    - **Submit appeal** to the designated address for further review.
+**Decision Tree for Handling Claim Denials Due to Timely Filing Limits (TFL)**
 
-    ### Conclusion:
-    - After taking steps according to the decision tree and resolving the claim, ensure to **document all actions taken** for future reference and standard operating procedures. Always consult a senior agent if uncertain about a specific case.
-    """, 
+1. **Claim Review**
+   - Action: Review claim in relevant systems (e.g., Caretend, Payspan).
+     - If information is found: Proceed to the next step.
+     - If no information found: Document findings and proceed to check denial reason.
 
+2. **Verify Denial Reason**
+   - Action: Check in the claims portal/Web Portal to confirm denial reason.
+     - If denial reason is confirmed as Timely Filing Expiration:
+       - Proceed to "Review Timely Filing Periods."
+     - If denial reason is not related to TFL: Document alternative denial reason and proceed to follow up as appropriate.
 
-    "Invoice" : """
-    
-        ### Decision Tree for Addressing Claim Denials
+3. **Review Timely Filing Periods**
+   - Action: Review claim date of service (DOS) and timely filing guidelines for the carrier.
+     - If claim submission is within timely filing period based on DOS:
+       - Investigate further potential issues (e.g., billing errors).
+     - If claim exceeded timely filing limit:
+       - Document the finding and proceed to "Check for Proof of Timely Submission."
 
-        1. **Claim Denial Reason Identification:**
-            - Check the **denial reason** on the claim.
-            
-        2. **Denial Reason: "Paid"**
-            - **Action: Review payment status in Payspan/EOB**
-                - **If payment was received:** 
-                    - **Compare paid amount with allowed amount.**
-                        - **If paid amount > allowed amount:** 
-                            - Action: Adjust balance due to overpayment.
-                        - **If paid amount ≤ allowed amount:**
-                            - Action: No action needed; payment is within limits.
-                        - **If payment not posted:** 
-                            - Action: Post payment and adjust balance if under $6.00.
-                        
-        3. **Denial Reason: "Claim/service lacks information" (Code 16)**
-            - **Action: Review claim submission.**
-                - **Action: Check authorization status.**
-                    - **If authorization is valid:**
-                        - Action: Prepare appeal with necessary documentation (EOB and AUTH sheet), and submit appeal.
-                    - **If authorization is invalid/missing:**
-                        - **Next Steps:**
-                            - Review claim details to identify missing information.
-                            - Correct the submission errors and resubmit the claim.
+4. **Check for Proof of Timely Submission**
+   - Action: Verify submission dates in relevant portals.
+     - If proof is found showing timely submission:
+       - Prepare an appeal (collect necessary documentation).
+     - If no proof is found:
+       - Document findings and prepare to forward the claim to the client for adjustment and closure.
 
-        4. **Denial Reason: "Claim/service lacks information" (other than Code 16)**
-            - **Action: Investigate further based on specifics.**
-                - **Action: Review any additional documentation needed.**
-                    - Prepare appeal if valid documentation can be provided. 
-                    - Submit appeal to the designated address.
+5. **Prepare Appeal (if applicable)**
+   - Action: Gather required documentation (denial EOB, proof of submission, payer contract).
+   - Action: Identify and confirm appeal mailing address.
+   - Action: Submit appeal.
+     - Document the submission for follow-up.
 
-        5. **Claim Status Review**
-            - **If the claim requires additional follow-up:**
-                - Action: Allow time to process a claim status update.
-                - Action: Verify eligibility to confirm patient's insurance coverage.
+6. **Forward Claim to Client (if applicable)**
+   - Action: Inform client of the denial and suggest closure or adjustments as necessary.
+   - Document any client responses or further instructions.
 
-        6. **Documentation Management**
-            - Ensure all actions taken are documented properly and shared within the team.
-            - Update PDFs and files in the shared folder to maintain current records.
+7. **Further Review & Follow-Up**
+   - Action: Monitor any responses from the payer or client regarding the appeal or adjustments.
+   - If appeal is upheld or adjustments made, document the outcome.
+   - If denied again, review denial reasons again and reassess next steps.
 
-        ### Additional Notes
-        - Always verify the timeline of actions taken and ensure all follow-up actions are within the designated timeframes.
-        - Keep an open line of communication with other team members for any clarifications or shared insights from similar cases.""",
+**Documentation:**
+- Always document each step taken, the findings, and actions for future reference and follow-up.
+
+By following this flowchart, new agents can systematically analyze and address claim denials related to timely filing limits, ensuring thoroughness and consistency in handling such claims.""", 
+
+"Invoice" : """
+
+### Decision Tree for Addressing Claim Denials Related to Missing Invoices
+
+1. **Claim Denial Reason Identified**
+   - **Is the denial due to a "Missing Invoice"?**
+     - Yes: Proceed to Step 2.
+     - No: Review the denial reason and follow appropriate protocol for that specific issue.
+
+2. **Check Documentation and Claim Status**
+   - **Review the claim in appropriate platforms (Payspan, caretend, etc.)**
+     - Did you find any response or submission status regarding the claim?
+       - Yes: Follow the documentation trail indicated in the response.
+       - No: Proceed to Step 3.
+
+3. **Search for Invoice Documentation**
+   - **Check other systems for invoice copies (Cardinal, PSI, Redbook, etc.)**
+     - Did you find a valid invoice copy?
+       - Yes: Attach it to the appeal and proceed to Step 4.
+       - No: Proceed to Step 5.
+
+4. **Prepare and Mail Appeal**
+   - **Attach the necessary documentation (EOB, AUTH, valid invoice)**
+   - **Prepare appeal and mail it to the indicated address (e.g., PO BOX 811610 LOS ANGELES CA 90081)**
+   - **Document the submission with timelines (TFL information) for your records.**
+   - **End Process**
+
+5. **Request Invoice Copy from Client**
+   - **Task the client to obtain a valid invoice copy.**
+   - **Document the communications and follow-up actions taken.**
+   - **Once received, proceed to Step 4.**
+   - **End Process**
+
+6. **Claim Denial Follow-Up (if no response)**
+   - **If no response is found or the appeal is denied:**
+   - **Review the status in various platforms (caretend, Payspan) again.**
+   - **Consider reaching out to the carrier for clarification if necessary.**
+   - **End Process**
+
+### Additional Notes:
+- **For Denials with Expired Timeframes (TFL)**
+  - Acknowledge that the TFL has expired, but making an appeal with the best available documentation is essential.
+- **When Preparing Appeals**
+  - Always ensure you reference the correct claim and denial details. Providing comprehensive documentation increases the chances of a successful appeal.
+- **Documentation and Record Keeping**
+  - Every step taken should be documented clearly, along with dates and the outcomes of those actions for future reference and follow-up.""",
 
 
+"Duplicate Claim" : '''
 
-    "Duplicate Claim" : """ 
-    
-        ### Decision Tree for Handling Claim Denials
+### Claim Denial Decision Tree
 
-        1. **Identify Denial Reason**
-        - Is the claim denied due to "Paid" status?
-            - **Yes**: Proceed to Step 2.
-            - **No**: Go to Step 3.
-        
-        2. **Claim Paid**  
-        - Check the payment status in Payspan.
-            - If payment was made more than the allowed amount:
-            - **Action**: Calculate the allowed amount.
-            - **Action**: Adjust balance.
-            - If payment was made but not posted (less than $6.00):
-            - **Action**: Post payment and adjust balance.
-        
-        3. **Claim Missing Information (Denial Reason: 16)**
-        - Review claim submission.
-            - If there is a submission/billing error:
-            - **Action**: Check authorization status in PSI.
-            - If the authorization code is valid:
-                - **Action**: Prepare appeal with necessary documentation (EOB and AUTH sheet).
-                - **Action**: Submit appeal.
-            - If the authorization code is invalid or missing:
-                - **Action**: Gather details about the missing/incomplete authorization.
-                - **Action**: Re-submit the claim with the correct information.
+1. **Claim Denial Identified**
+   - Check the **Denial Reason**.
+     - If **"Duplicate"**, proceed to the next step.
 
-        4. **Verify Eligibility**
-        - Confirm the patient's insurance coverage.
-            - If eligible:
-            - Proceed with claim processing.
-            - If not eligible:
-            - **Action**: Communicate with the patient regarding coverage issues.
+2. **Review Claim Details**
+   - Look for the **Invoice Number** and **Date of Service (DOS)**.
+   - Verify if the claim has been paid previously.
 
-        5. **Documentation Update**
-        - Ensure that all necessary documentation is updated and available.
-            - **Action**: Update PDF files in the shared folder for team access.
-        
-        6. **Allow Time to Process**
-        - After making the necessary actions (updating documentation, adjusting balance, or submitting appeals), allow time for the system to process the changes.
-            - Once time has passed, **Action**: Check status updates in the system.
+3. **Check Claims Status**
+   - **Access Caretend Software**:
+     - If payment status indicates **No Payment Received**:
+       - Record your observations.
+       - Move to the next step.
+     - If payment status shows **Claim Paid**:
+       - Confirm details against the original claim.
+       - Adjust balance as necessary.
+       - Conclusion: **Claim is a Duplicate, no further action needed**.
 
-        ### Summary Flow
-        - Start → Identify Denial Reason
-        - Denial Reason = Paid → Check Payment Status → Adjust or Post Payment
-        - Denial Reason = 16 (Missing Info) → Review Submission → Check Authorization → Prepare and Submit Appeal or Re-submit Claim
-        - Verify Eligibility → Process Claim (if eligible) or Communicate Issues (if not)
-        - Update Documentation → Allow Processing Time → Check Status """,
+4. **Action Steps for Duplicate Claims**
+   - If claim is denied due to a duplicate:
+     - **Check Payspan Portal**:
+       - Confirm the denial reason.
+       - Record the date of denial.
+     - Determine the **Original Claim**
+       - If the previous claim was paid, note details.
+
+5. **Assess Billing Errors**
+   - Review the **Billing Details**:
+     - If there are indications of incorrect billing (e.g., units billed separately or incorrect codes):
+       - Identify the correct billing format (e.g., units per procedure).
+       - Document the changes needed.
+
+6. **Update and Correct Claims**
+   - **Adjust Claim Details**:
+     - Modify charged amount and units as per guidelines.
+     - Add any necessary modifiers (e.g., LT RT).
+   - **Prepare Corrected Claim**:
+     - Ensure no prior corrected claim was submitted.
+     - If necessary, prepare to submit a new corrected claim electronically.
+
+7. **Submit Corrected Claim**
+   - Electronically submit the corrected claim using the relevant web portal (e.g., Zermied).
+   - Document the submission details including date and confirmation.
+
+8. **Verification Post-Submission**
+   - After submitting, check status in the portal:
+     - If confirmation shows **Corrected Claim Submitted**:
+       - Document and close the issue.
+     - If there are issues or no submission found:
+       - Address the concern and resubmit if needed.
+
+9. **Follow-Up**
+   - Set reminders or follow up on the claim status after a specified time frame (e.g., 30 days).
+   - Document all actions taken for future reference.
+
+### Ending Procedure
+- If the claim continues to face issues, escalate to a senior agent or supervisor for further assistance.
+- Ensure all notes are clear and accessible for future inquiries or audits.
+
+### Notes for Ease of Use
+- Keep this flowchart accessible alongside actual claim examples.
+- Regularly update the process as new billing regulations or software features are introduced. 
 
 
-    "Diagnosis Code" : """
-    
-        ### Decision Tree for Handling Claim Denials
+''' ,  
 
-        1. **Determine Denial Reason:**
-        - **Was the claim denied for "Lack of Information (e.g., AUTH missing or incomplete)"?**
-            - **Yes:** 
-            - Review claim submission for accuracy.
-            - Check authorization status in PSI or MPM to find valid authorization details.
-            - Prepare an appeal with necessary documentation (EOB and AUTH sheet).
-            - Submit the appeal to the specified address.
-            - **No: Go to next question.**
+"Diagnosis Code" : """
 
-        2. **Was the claim denied as "Paid (Exceeds Allowed Amount)"?**
-        - **Yes:**
-            - Review payment status in Payspan or EOB.
-            - Calculate the allowed amount using Cost + Percentage formula.
-            - Adjust the balance as necessary since payment exceeds the allowed amount.
-        - **No: Go to next question.**
+### Claim Denial Decision Tree
 
-        3. **Was the claim denied for "Incorrect UPN (Universal Product Number)"?**
-        - **Yes:**
-            - Review EOB for details on the UPN issue.
-            - Submit a corrected claim with the appropriate information and fee schedule.
-            - Gather and ensure all documentation is accurate for resubmission.
-        - **No: Go to next question.**
+1. **Start**
+   - Is the claim denied?
 
-        4. **Was the claim denied due to "No Authorization (AUT) or Pre Auth Absent"?**
-        - **Yes:**
-            - Check in Payspan and Zirmed for denial details.
-            - Look for valid authorization in PSI.
-            - If there is a valid auth, raise an appeal with the authorization and EOB.
-        - **No: Go to next question.**
+2. **Identify Denial Reason**
+   - If yes, check the denial reason:
+     - **Missing Diagnosis Code**
+       - Action: Review claim form.
+         - Are all submitted diagnosis codes correct?
+           - If **Yes**: Resubmit corrected claim with missing code.
+           - If **No**: Identify the missing code and resubmit.
+     - **Invalid Diagnosis Code**
+       - Action: Review the diagnosis codes submitted.
+         - Is the diagnosis code listed valid?
+           - If **Yes**: Check for supporting documents.
+           - If **No**: Obtain the correct code from the provider, then resubmit.
+     - **Invalid/Missing Dx Code**
+       - Action: Review in Payspan or other verification system.
+         - Is there a valid authorization for the provided diagnosis code?
+           - If **Yes**: Forward claim to the client for further assistance.
+           - If **No**: Check authorization and resubmit with valid DX code.
 
-        5. **Was the denial due to "Claim lacks Documentation"?**
-        - **Yes:**
-            - Verify eligibility and insurance coverage.
-            - Update necessary documentation and files in the shared folder for team access.
-            - Allow time to process and check for updates on the claim status.
-        - **No:** 
-            - **Not in the Given Scenarios.** Seek escalation if the reason is unclear.
+3. **Check Authorization**
+   - Is there an existing authorization on file for the date of service (DOS)?
+     - If **Yes**: Confirm authorized diagnosis codes.
+     - If **No**: Contact the provider for authorization details.
 
-        ### Tips for New Agents:
-        - Always confirm the specific denial reason as a starting point.
-        - Ensure proper documentation is collected: EOB, authorization details, corrected claim forms, etc.
-        - Document all communications and actions taken for accountability and follow-up purposes.
-        - Use the specified appeal mailing addresses accurately.
-        - If unsure, consult with more experienced team members or escalate cases as needed.
-        """, 
+4. **Review Previous Actions**
+   - Have there been any previous actions taken regarding this claim?
+     - If **Yes**: Review previous notes and actions to ensure no steps were missed.
+     - If **No**: Proceed with initial investigation.
 
-    
-    "Incorrect Modifier": """
-    
-        ### Decision Tree for Addressing Claim Denials
+5. **Validation and Resubmission**
+   - After addressing missing or invalid diagnosis codes:
+     - Ensure the claim is filled correctly.
+     - Submit the corrected claim through the appropriate channels (paper or electronic).
+     - Confirm the correct mailing address is utilized if sending via paper.
 
-        1. **Claim Denial Reason Identified**
-        
-        a. **Denial Reason: "Paid"**
-        
-        - **Sub-Scenario 1: Paid More Than Allowed Amount**
-            - Action: **Review in Payspan**
-                - Reason: Verify the payment status and details.
-            - Action: **Calculate Allowed Amount**
-                - Reason: Determine if the payment was within allowed limits.
-            - Action: **Adjust Balance**
-                - Reason: Adjust balance since the claim was paid more than the allowed amount.
-        
-        - **Sub-Scenario 2: Paid Amount Below Minimum Posting Threshold**
-            - Action: **Review in Payspan EOB**
-                - Reason: Check the payment status and details.
-            - Action: **Calculate Paid Amount**
-                - Reason: Verify the payment calculation.
-            - Action: **Post Payment and Adjust Balance**
-                - Reason: Balance was not posted due to being less than $6.00, hence adjust accordingly.
-        
-        b. **Denial Reason: "Claim/service lacks information" (Denial Code 16)**
-        
-        - Action: **Review Claim Submission**
-            - Reason: Identify the reason for denial and verify submission errors.
-        - Action: **Check Authorization Status in PSI**
-            - Reason: Verify if the treatment authorization code is valid.
-        - Action: **Prepare Appeal**
-            - Reason: Provide necessary documentation (EOB and AUTH sheet).
-        - Action: **Submit Appeal to Designated Address**
-            - Reason: Formally appeal the claim denial.
+6. **Follow Up**
+   - After resubmission, monitor the claim status:
+     - Has the claim been processed?
+       - If **Yes**: Document outcomes.
+       - If **No**: Follow up with the carrier or internal team.
 
-        2. **Additional Scenarios**
+### End
 
-        a. **Eligibility Issues**
-        
-        - Action: **Verify Eligibility**
-            - Reason: Confirm the patient's insurance coverage.
-        
-        b. **Documentation Updates**
-        
-        - Action: **Update PDF in Shared Folder**
-            - Reason: Ensure all team members have access to the latest documentation.
+""", 
 
-        c. **Processing Time**
-        
-        - Action: **Allow Time to Process**
-            - Reason: Give the system time to update the claim status."""
+ "Authorization" : """
+
+### Decision Tree for Handling Denied Claims Due to Authorization Issues
+
+1. **Claim Denial Reason**
+   - Check the denial reason listed on the claim.
+     - **No Auth / No Auth Obtained**
+     - **Authorization Does Not Cover DOS**
+     - **Missing/Incompleted/Invalid Treatment Authorization Code**
+     - **Missing Documents (Auth)**
+
+2. **If Denial Reason is "No Auth / No Auth Obtained"**
+   - **Check Submission History** 
+     - Was the claim submitted with an authorization number?
+       - **Yes:** 
+         - Verify the validity of the authorization in the system.
+           - **Valid Authorization Exists:** 
+             - Raise an appeal with supporting documents (denied EOB, authorization sheet).
+           - **No Valid Authorization:** 
+             - Contact relevant parties to obtain the necessary authorization.
+       - **No:** 
+         - Identify if the authorization should have been obtained.
+           - If it should have been:
+             - Obtain authorization, then re-submit claim.
+
+3. **If Denial Reason is "Authorization Does Not Cover DOS"**
+   - **Check Authorization Validity**
+     - Confirm if the authorization was valid during the Date of Service (DOS):
+       - **Valid for DOS:** 
+         - Prepare and submit an appeal with documentation.
+       - **Not Valid for DOS:** 
+         - Investigate if further authorization can be granted for this service.
+
+4. **If Denial Reason is "Missing/Incompleted/Invalid Treatment Authorization Code"**
+   - **Review Claim Submission**
+     - Verify the details on the authorization code.
+       - **Auth Code Confirmed Valid:** 
+         - Prepare an appeal providing proof of the authorization code's effectiveness.
+       - **No Valid Authorization Found:** 
+         - Seek necessary documentation from the provider.
+
+5. **If Denial Reason is "Missing Documents (Auth)"**
+   - **Gather Required Documentation**
+     - Review the claim’s requirements for documentation.
+       - **Document Available:** 
+         - Submit the missing documentation as part of the appeal.
+       - **Document Not Available:** 
+         - Contact the provider to request necessary documents for processing the claim.
+
+6. **Common Actions for Appealing Denied Claims**
+   - **Prepare Appeal**
+     - Collect necessary documentation (denied EOB, authorization sheets, fee schedules).
+   - **Confirm Appeal Submission Addresses**
+     - Generally, mail to PO BOX 811610 LOS ANGELES CA 90081.
+   - **Maintain Records**
+     - Keep a log of the appeals including dates, reasons for denial, and responses received.
+
+7. **Follow-Up**
+   - **Post-Appeal Submission**
+     - Check back with the carrier's portal after a designated time for status updates.
+     - Document all interactions with carriers and responses to appeals.
+
+
+"""
 
 
     }
