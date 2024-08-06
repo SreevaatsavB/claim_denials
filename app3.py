@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.markdown("# Claim denails ")
+st.markdown("# Claim denials (V4)")
 # First dropdown for CO16 and CO45
 option = st.selectbox('Select an option', ['CO16', 'CO45'])
 
@@ -255,7 +255,7 @@ This flowchart summarizes the steps agents have taken in various scenarios regar
 
 """,
 
-"Invoice" : """
+"Missing Invoice" : """
 
 ### Claim Denial Handling Flowchart for Missing Invoices
 
@@ -466,7 +466,6 @@ This flowchart provides a structured approach for new agents to effectively mana
 This flowchart is designed to guide AR team members in systematically addressing claim denials due to authorization issues based on previous effective resolution pathways.
 
 """, 
-
 
 "Authorization Code Does Not Cover DOS" : """
 
