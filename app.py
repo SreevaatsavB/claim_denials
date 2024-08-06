@@ -465,7 +465,7 @@ By following this structured workflow, agents can systematically address denied 
   - Attach the necessary documentation (EOB, AUTH documentation, invoice copy)
   - Use the mailing address for appeal: PO BOX 811610, LOS ANGELES, CA 90081.
 
-4 *Action Step 4: Confirm Timeliness of Appeal*
+4. *Action Step 4: Confirm Timeliness of Appeal*
   - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from the denial date.
 
 ### Special Notes:
