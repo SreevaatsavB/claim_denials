@@ -190,10 +190,10 @@ if option == 'CO16':
   
   **If Authorization si not found**
 
-    - Place a call to the insurance company to inquire about the possibility of retroactive authorization.
-      - If retroactive authorization is possible, task the  to handle it.
-      - If no retroactive authorization is possible and the balance is less than $150, proceed with write-off and add back-end billing if it is a rental.
-      - If the balance is more than $150, task the client for write-off approval.
+  - Place a call to the insurance company to inquire about the possibility of retroactive authorization.
+    - If retroactive authorization is possible, task the  to handle it.
+    - If no retroactive authorization is possible and the balance is less than $150, proceed with write-off and add back-end billing if it is a rental.
+    - If the balance is more than $150, task the client for write-off approval.
 
 """,
 
