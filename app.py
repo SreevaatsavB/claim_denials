@@ -169,29 +169,31 @@ if option == 'CO16':
 ### Claim Denied Due to No Authorization
 
 
-1. *Claim Denied Due to Lack of Authorization*  
- - Reviewed the claim details in Payspan.
- - *Action:* Verify denial reason.
- - *Outcome:* Claim denied for lacking authorization.
- - *Next Step:* Check the submission in billing software.
+1. **Verify Claim Submission Status in Waystar**
+    - Check Waystar to see whether the claim was submitted with an authorization number.
+    - If yes,
+      - Check Authorization Availability in Software
+      - Verify the availability of the authorization in the billing software.
+      - Determine who provided the authorization (HP, IPA, or Hospital).
 
-2. *Check Submission in Billing Software*  
- - Confirm whether the claim was submitted with a valid authorization number.
- - If authorization number is provided:
- - *Action:* Check if the authorization is valid in PSI or other portals.
- - If no authorization number is found:
- - *Action:* Reach out to the provider for the necessary authorization documents.
+2. **Validate Authorization**
+    - Using the authorization number, search the portal of the entity that provided the authorization or check PSI. 
+    - Download the authorization sheet and validate its details.
+    - Prepare Appeal with Authorization Sheet
 
-3. *Verify Validity of Authorization*  
- - In PSI, confirm authorization is active for the date of service.
- - If valid authorization exists:
- - *Action:* Prepare an appeal including:
- - Authorized document
- - Denied EOB (Explanation of Benefits)
- - Fee schedule
- - *Next Step:* Send the appeal to the designated mailing address (e.g., PO BOX 811610, LOS ANGELES, CA 90081).
- - If authorization is not valid or not found:
- - *Next Step:* Request the necessary authorization from the patient or provider.
+  *If a valid authorization is found, prepare an appeal with the following documents:*
+    - Authorization sheet
+    - Denied EOB (Explanation of Benefits)
+    - Additional documentation to prevent future denials, such as payer contract or fee schedule
+  - Send the appeal to the designated mailing address (e.g., PO BOX 811610, LOS ANGELES, CA 90081).
+
+  
+  **If Authorization si not found**
+
+    - Place a call to the insurance company to inquire about the possibility of retroactive authorization.
+      - If retroactive authorization is possible, task the  to handle it.
+      - If no retroactive authorization is possible and the balance is less than $150, proceed with write-off and add back-end billing if it is a rental.
+      - If the balance is more than $150, task the client for write-off approval.
 
 """,
 
@@ -447,46 +449,24 @@ By following this structured workflow, agents can systematically address denied 
 ### Claim Denial Due to Missing Invoice Workflow
 
 1. *Identify the Claim Denial Reason* 
- The claim was denied due to a missing invoice.
+  - The claim was denied due to a missing invoice.
 
-2. *Action Step 1: Review the Claim in Payspan* 
- - Check Payspan for details on the claim denial. 
- - Note the denial reason (e.g., Missing Invoice).
+2. *Action Step 1: Check Additional Resource*
+  - Check LA CARE Portal or Payspan for confirmation of the denial details.
+  - Verify if the invoice exists in the system. 
+  - Check if it is a listed code or unlisted code in the fee schedule.
+  - If the code is listed in the fee schedule, no invoice copy is needed. Attach the fee schedule and appeal the invoice.
+  - If the code is unlisted in the fee schedule, look for the invoice copy in CARDINAL, RED BOOK, or PSI. If an invoice copy is found, appeal with the invoice copy.
 
-3. *Action Step 2: Verify Claim Submission Status* 
- - *Use Software: Check in **Caretend* for the submission status.
- - If response found, proceed with actions based on findings.
- - If no response found, continue to the next step.
+3. *Action Step 2 : Communicate with Client*
+  - If no invoice is found, task the client to obtain a necessary invoice copy.  
+  - If unable to find a valid invoice copy, task the client for a valid invoice copy for payment.
+  - Action Step 3: Prepare and File an Appeal (if invoice found or client provides invoice)
+  - Attach the necessary documentation (EOB, AUTH documentation, invoice copy)
+  - Use the mailing address for appeal: PO BOX 811610, LOS ANGELES, CA 90081.
 
-4. *Action Step 3: Check Additional Resources* 
- - *Software Options*: 
- - Check the *LA CARE Portal* or *PaySpan* for confirmation of the denial details.
- - Verify if the invoice exists in the system.
- - *If invoice found*, note down the valid details.
- - *If invoice not found*, continue to the next step.
-
-5. *Action Step 4: Search for Supporting Documentation* 
- - Check for any similar invoices that may support the claim.
- - Use *Redbook* to find any potential invoice copies.
-
-6. *Action Step 5: Document Findings* 
- - If no valid invoice is available, document that no valid documents are available for appeal.
- - If invoice copy is found, prepare it for submission.
-
-7. *Action Step 6: Communicate with Client* 
- - If no invoice is found, *task the client* to obtain a necessary invoice copy.
-
-8. *Action Step 7: Prepare and File an Appeal* (if invoice found or client provides invoice) 
- - Attach the necessary documentation (EOB, AUTH documentation, invoice copy).
- - *Mailing Address for Appeal*: PO BOX 811610, LOS ANGELES, CA 90081.
-
-9. *Action Step 8: Confirm Timeliness of Appeal* 
- - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from denial date.
- - Keep track of submission dates and follow up as needed.
-
-10. *Action Step 9: Follow Up* 
- - Check back in the systems (e.g., Payspan, Caretend) for updates regarding the appeal status.
- - If no response is received after a certain period, follow up with payer.
+4 *Action Step 4: Confirm Timeliness of Appeal*
+  - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from the denial date.
 
 ### Special Notes:
 • Always treat each claim individually and adjust actions based on the specifics of the claim.
