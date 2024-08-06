@@ -179,21 +179,22 @@ if option == 'CO16':
 2. **Validate Authorization**
     - Using the authorization number, search the portal of the entity that provided the authorization or check PSI. 
     - Download the authorization sheet and validate its details.
-    - Prepare Appeal with Authorization Sheet
 
-  *If a valid authorization is found, prepare an appeal with the following documents:*
-    - Authorization sheet
-    - Denied EOB (Explanation of Benefits)
-    - Additional documentation to prevent future denials, such as payer contract or fee schedule
-  - Send the appeal to the designated mailing address (e.g., PO BOX 811610, LOS ANGELES, CA 90081).
+3. **Prepare Appeal with Authorization Sheet**
+
+    - If a valid authorization is found, prepare an appeal with the following documents:
+      - Authorization sheet
+      - Denied EOB (Explanation of Benefits)
+      - Additional documentation to prevent future denials, such as payer contract or fee schedule
+    - Send the appeal to the designated mailing address (e.g., PO BOX 811610, LOS ANGELES, CA 90081).
 
   
-  **If Authorization si not found**
+4. **If Authorization is not found**
 
-  - Place a call to the insurance company to inquire about the possibility of retroactive authorization.
-    - If retroactive authorization is possible, task the  to handle it.
-    - If no retroactive authorization is possible and the balance is less than $150, proceed with write-off and add back-end billing if it is a rental.
-    - If the balance is more than $150, task the client for write-off approval.
+    - Place a call to the insurance company to inquire about the possibility of retroactive authorization.
+      - If retroactive authorization is possible, task the  to handle it.
+      - If no retroactive authorization is possible and the balance is less than $150, proceed with write-off and add back-end billing if it is a rental.
+      - If the balance is more than $150, task the client for write-off approval.
 
 """,
 
@@ -453,17 +454,18 @@ By following this structured workflow, agents can systematically address denied 
   - Check LA CARE Portal or Payspan for confirmation of the denial details.
   - Verify if the invoice exists in the system. 
   - Check if it is a listed code or unlisted code in the fee schedule.
-  - If the code is listed in the fee schedule, no invoice copy is needed. Attach the fee schedule and appeal the invoice.
-  - If the code is unlisted in the fee schedule, look for the invoice copy in CARDINAL, RED BOOK, or PSI. If an invoice copy is found, appeal with the invoice copy.
+    - If the code is listed in the fee schedule, no invoice copy is needed. Attach the fee schedule and appeal the invoice.
+    - If the code is unlisted in the fee schedule, look for the invoice copy in CARDINAL, RED BOOK, or PSI. If an invoice copy is found, appeal with the invoice copy.
 
 2. *Action Step 2 : Communicate with Client*
   - If no invoice is found, task the client to obtain a necessary invoice copy.  
   - If unable to find a valid invoice copy, task the client for a valid invoice copy for payment.
-  - Action Step 3: Prepare and File an Appeal (if invoice found or client provides invoice)
+
+3. Action Step 3: Prepare and File an Appeal (if invoice found or client provides invoice)
   - Attach the necessary documentation (EOB, AUTH documentation, invoice copy)
   - Use the mailing address for appeal: PO BOX 811610, LOS ANGELES, CA 90081.
 
-3. *Action Step 4: Confirm Timeliness of Appeal*
+4. *Action Step 4: Confirm Timeliness of Appeal*
   - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from the denial date.
 
 ### Special Notes:
