@@ -450,23 +450,23 @@ By following this structured workflow, agents can systematically address denied 
 ### Claim Denial Due to Missing Invoice Workflow
 
 
-1. *Action Step 1: Check Additional Resource*
-  - Check LA CARE Portal or Payspan for confirmation of the denial details.
-  - Verify if the invoice exists in the system. 
-  - Check if it is a listed code or unlisted code in the fee schedule.
-    - If the code is listed in the fee schedule, no invoice copy is needed. Attach the fee schedule and appeal the invoice.
-    - If the code is unlisted in the fee schedule, look for the invoice copy in CARDINAL, RED BOOK, or PSI. If an invoice copy is found, appeal with the invoice copy.
+1. **Action Step 1: Check Additional Resource**
+    - Check LA CARE Portal or Payspan for confirmation of the denial details.
+    - Verify if the invoice exists in the system. 
+    - Check if it is a listed code or unlisted code in the fee schedule.
+      - If the code is listed in the fee schedule, no invoice copy is needed. Attach the fee schedule and appeal the invoice.
+      - If the code is unlisted in the fee schedule, look for the invoice copy in CARDINAL, RED BOOK, or PSI. If an invoice copy is found, appeal with the invoice copy.
 
-2. *Action Step 2 : Communicate with Client*
-  - If no invoice is found, task the client to obtain a necessary invoice copy.  
-  - If unable to find a valid invoice copy, task the client for a valid invoice copy for payment.
+2. **Action Step 2 : Communicate with Client**
+    - If no invoice is found, task the client to obtain a necessary invoice copy.  
+    - If unable to find a valid invoice copy, task the client for a valid invoice copy for payment.
 
-3. Action Step 3: Prepare and File an Appeal (if invoice found or client provides invoice)
-  - Attach the necessary documentation (EOB, AUTH documentation, invoice copy)
-  - Use the mailing address for appeal: PO BOX 811610, LOS ANGELES, CA 90081.
+3. **Action Step 3: Prepare and File an Appeal (if invoice found or client provides invoice)**
+    - Attach the necessary documentation (EOB, AUTH documentation, invoice copy)
+    - Use the mailing address for appeal: PO BOX 811610, LOS ANGELES, CA 90081.
 
-4. *Action Step 4: Confirm Timeliness of Appeal*
-  - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from the denial date.
+4. **Action Step 4: Confirm Timeliness of Appeal**
+    - Ensure the appeal is filed within the Time Frame Limit (TFL) of 365 days from the denial date.
 
 ### Special Notes:
 • Always treat each claim individually and adjust actions based on the specifics of the claim.
