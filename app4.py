@@ -537,7 +537,6 @@ By following this structured workflow, agents can systematically address denied 
     # Appeal Process
 
 elif option == 'CO29':
-    st.markdown("No additional information to display.")
 
 
     co29_option = st.selectbox('Select a denial reason', [
